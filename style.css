@@ -1,0 +1,451 @@
+/* =========================================================
+   CONSELHO TUTELAR - Folha de estilos principal
+   Paleta: tons de verde-azulado (confiança/proteção) +
+   terracota quente (acolhimento humano) sobre fundo creme.
+   ========================================================= */
+
+:root {
+  /* Cores */
+  --bg: #FAF7F2;
+  --bg-alt: #EFE8DA;
+  --teal: #1F4B4C;
+  --teal-dark: #143333;
+  --teal-light: #E4EEED;
+  --coral: #D96F45;
+  --coral-dark: #A34F2F;
+  --coral-light: #FBEAE1;
+  --text: #262622;
+  --text-secondary: #63625A;
+  --border: #DDD5C4;
+
+  /* Tipografia */
+  --font-titulo: 'Lora', Georgia, serif;
+  --font-corpo: 'Inter', Arial, sans-serif;
+
+  /* Espaçamento */
+  --radius: 10px;
+  --max-width: 1080px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-corpo);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--teal);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-titulo);
+  font-weight: 600;
+  color: var(--teal-dark);
+  line-height: 1.25;
+  margin: 0 0 0.6em;
+}
+
+h1 { font-size: 2.4rem; }
+h2 { font-size: 1.7rem; }
+h3 { font-size: 1.2rem; }
+
+p { margin: 0 0 1em; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* =========================
+   Cabeçalho / navegação
+   ========================= */
+
+.cabecalho {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.cabecalho .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-family: var(--font-titulo);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--teal-dark);
+}
+
+/* selo em forma de escudo simples, o elemento de assinatura do site */
+.selo {
+  width: 34px;
+  height: 34px;
+  background: var(--teal);
+  border-radius: 8px 8px 8px 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+  transform: rotate(-3deg);
+}
+
+.menu {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.menu a:hover,
+.menu a.ativo {
+  color: var(--teal);
+}
+
+.menu-botao {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--teal-dark);
+  cursor: pointer;
+}
+
+/* =========================
+   Botões
+   ========================= */
+
+.botao {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.botao-primario {
+  background: var(--coral);
+  color: #fff;
+}
+.botao-primario:hover { background: var(--coral-dark); }
+
+.botao-secundario {
+  background: transparent;
+  border-color: var(--teal);
+  color: var(--teal);
+}
+.botao-secundario:hover { background: var(--teal-light); }
+
+/* =========================
+   Hero (banner de destaque)
+   ========================= */
+
+.hero {
+  background: var(--teal);
+  color: #fff;
+  padding: 64px 0;
+}
+
+.hero h1 { color: #fff; max-width: 640px; }
+.hero p { color: #DCEAE9; max-width: 560px; font-size: 1.1rem; }
+
+.hero-acoes {
+  display: flex;
+  gap: 14px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.hero .botao-secundario {
+  border-color: #fff;
+  color: #fff;
+}
+.hero .botao-secundario:hover { background: rgba(255,255,255,0.1); }
+
+/* =========================
+   Seções e cartões
+   ========================= */
+
+.secao {
+  padding: 56px 0;
+}
+
+.secao-alt {
+  background: var(--bg-alt);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  color: var(--coral-dark);
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.grade-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.cartao {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.cartao-destaque {
+  background: var(--teal-light);
+  border: none;
+}
+
+.icone {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--coral-light);
+  color: var(--coral-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 14px;
+}
+
+/* =========================
+   Passo a passo numerado
+   ========================= */
+
+.passos {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 28px 0;
+}
+
+.passo {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+
+.passo-numero {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-family: var(--font-titulo);
+}
+
+/* =========================
+   Selo de emergência (Disque 100)
+   ========================= */
+
+.emergencia {
+  background: var(--coral);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 22px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.emergencia strong {
+  font-family: var(--font-titulo);
+  font-size: 1.3rem;
+  display: block;
+}
+
+.emergencia span {
+  color: #FDE4D8;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   FAQ (perguntas frequentes)
+   ========================= */
+
+.pergunta {
+  border-top: 1px solid var(--border);
+  padding: 18px 0;
+}
+
+.pergunta:last-child { border-bottom: 1px solid var(--border); }
+
+.pergunta-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-family: var(--font-corpo);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  padding: 0;
+}
+
+.pergunta-resposta {
+  max-height: 0;
+  overflow: hidden;
+  color: var(--text-secondary);
+  transition: max-height 0.25s ease;
+}
+
+.pergunta.aberta .pergunta-resposta {
+  max-height: 240px;
+  margin-top: 10px;
+}
+
+.pergunta-cabecalho .sinal {
+  font-size: 1.3rem;
+  color: var(--teal);
+  transition: transform 0.2s ease;
+}
+
+.pergunta.aberta .sinal {
+  transform: rotate(45deg);
+}
+
+/* =========================
+   Formulário de contato
+   ========================= */
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 560px;
+}
+
+.campo label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.campo input,
+.campo textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: var(--font-corpo);
+  font-size: 0.95rem;
+  background: #fff;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  outline: 2px solid var(--teal);
+  outline-offset: 1px;
+}
+
+.mensagem-envio {
+  display: none;
+  background: var(--teal-light);
+  color: var(--teal-dark);
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.mensagem-envio.visivel { display: block; }
+
+/* =========================
+   Rodapé
+   ========================= */
+
+.rodape {
+  background: var(--teal-dark);
+  color: #CBD9D8;
+  padding: 40px 0;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+
+.rodape a {
+  color: #fff;
+}
+
+/* =========================
+   Responsivo
+   ========================= */
+
+@media (max-width: 800px) {
+  .grade-3 { grid-template-columns: 1fr; }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    gap: 16px;
+  }
+
+  .menu.aberto { display: flex; }
+
+  .menu-botao { display: block; }
+
+  h1 { font-size: 1.9rem; }
+}
